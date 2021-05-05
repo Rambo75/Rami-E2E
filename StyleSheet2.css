@@ -1,6 +1,14 @@
-﻿#game {
-    height: 800px;
-    width: 1200px;
+﻿* {
+    box-sizing: border-box;
+}
+
+#game {
+    display: grid;
+
+    /*max-width: auto;
+    max-height: auto;
+    margin: auto;
+    height: 100%;*/
     background-image: url('game background .jpg');
 }
 
@@ -10,13 +18,14 @@ header {
 }
 
 footer {
-    height: 549px;
-    width: auto;
+    height: 100%;
+    width: 100%;
+    margin: auto;
 }
 
 #timer {
     background-color: yellow;
-    width: 100px;
+    width: 15%;
     padding: 20px;
     margin: 20px;
     font-size: 40px;
@@ -26,60 +35,259 @@ footer {
 
 #questions {
     background-color: rgb(255 255 255 / 0.50);
-    width: 600px;
+    width: 1000px;
     height: 200px;
     padding: 50px;
-    margin-left: 400px;
+    margin: auto;
     text-align: center;
-    word-wrap: break-word;
     color: white;
-    font-size: 20px;
+    word-wrap: break-word;
+    overflow: scroll;
+    font-size: 18px;
+    /*position: relative;*/
 }
 
-.action-button {
-    position:relative;
-    padding: 10px 40px;
-    margin: 20px 10px 10px 0px;
-    float: left;
-    border-radius: 80px;
-    font-family: 'Pacifico', cursive;
-    font-size: 25px;
-    color: #FFF;
-    text-decoration: none;
+.buttons {
+    padding-top: 50px;
+    display: grid;
+    grid-row-gap: 100px;
+    grid-column-gap: 250px;
+    grid-template-columns: auto auto;
+    width: 700px;
+    margin: auto;
 }
 
 .blue {
-    background-color: #3498DB;
+    padding: 20px;
+    width: 200px;
+    background-color: rgb(52 152 219 / 0.38);
     border-bottom: 5px solid #2980B9;
     text-shadow: 0px -2px #2980B9;
+    cursor: pointer;
+    outline: none;
+    font-size: 24px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0px 9px #266793;
+    color: white;
 }
+
+    .blue span {
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .blue span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+    .blue:hover {
+        background-color: rgb(29 108 161);
+    }
+    .blue:hover span {
+        padding-right: 25px;
+        
+    }
+
+        .blue:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+    .blue:active {
+        background-color: #1e597f;
+        box-shadow: 0 5px #12364d;
+        transform: translateY(4px);
+    }
 
 .red {
-    clear:both;
-    background-color: #E74C3C;
+    width: 200px;
+    padding: 20px;
+    background-color: rgb(221 37 37 / 0.50);
     border-bottom: 5px solid #BD3E31;
     text-shadow: 0px -2px #BD3E31;
+    cursor: pointer;
+    outline: none;
+    font-size: 24px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0px 9px #9d1616;
+    color: white;
 }
+
+    .red span {
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .red span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+    .red:hover span {
+        padding-right: 25px;
+    }
+
+        .red:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    .red:hover {
+        background-color: rgb(244 33 33);
+    }
+
+    .red:active {
+        background-color: #b32525;
+        box-shadow: 0px 5px #9d1616;
+        transform: translateY(4px);
+    }
 
 .green {
-    background-color: #82BF56;
+    cursor: pointer;
+    width: 200px;
+    background-color: rgb(130 191 86 / 0.43);
     border-bottom: 5px solid #669644;
     text-shadow: 0px -2px #669644;
+    outline: none;
+    font-size: 24px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0px 9px #437520;
+    color: white;
 }
+
+    .green span {
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .green span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+    .green:hover span {
+        padding-right: 25px;
+    }
+
+        .green:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+    .green:hover {
+        background-color: #82BF56
+    }
+
+    .green:active {
+        background-color: #618f41;
+        transform: translateY(4px);
+        box-shadow: #4c6e33;
+    }
 
 .yellow {
-    background-color: #F2CF66;
+    width: 200px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color:  rgb(242 207 102 / 0.52);
+    border-radius: 15px;
+    text-align: center;
+    outline: none;
     border-bottom: 5px solid #D1B358;
+    border: none;
     text-shadow: 0px -2px #D1B358;
+    box-shadow: 0px 9px #7c6625;
+    color: white;
 }
 
-.animate {
-    transition: all 0.1s;
-    -webkit-transition: all 0.1s;
+    .yellow span {
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .yellow span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+    .yellow:hover span {
+        padding-right: 25px;
+    }
+
+        .yellow:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+    .yellow:hover {
+        background-color: #F2CF66
+    }
+
+
+    .yellow:active {
+        box-shadow: #6a5b2d;
+        background-color: #a99047;
+        transform: translateY(4px);
+    }
+
+.rescue {
+    display: grid;
+    width: 500px;
+    margin: auto; 
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 50px;
+
 }
 
-.action-button:active {
-    transform: translate(0px,5px);
-    -webkit-transform: translate(0px,5px);
-    border-bottom: 1px solid;
+#Letter {
+    padding: 15px;
+    width: 200px;
+    background-color: rgb(109 222 29 / 0.45);
+    border-radius: 80px;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+
+
+}
+
+
+#fiftyFifty {
+    padding: 15px;
+    width: 200px;
+    background-color: rgb(109 222 29 / 0.45);
+    border-radius: 80px;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
+#Stop-timer {
+    padding: 15px;
+    width: 200px;
+    background-color: rgb(109 222 29 / 0.45);
+    border-radius: 80px;
+    font-size: 24px;
+    color: black;
+    text-align: center;
 }
